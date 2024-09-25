@@ -16,10 +16,5 @@ namespace Hangman
         {
             InitializeComponent();
         }
-
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-             
-        }
     }
 }
