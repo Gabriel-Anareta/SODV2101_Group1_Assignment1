@@ -39,7 +39,15 @@ namespace Hangman
 
         public void UpdateProgress(char guess)      // used to update Progress when a letter is guessed
         {
-            
+            List<int> indecies = GetIndecies(guess);
+            Char[] progressArr = Progress.ToCharArray();
+
+            foreach (int index in indecies)
+            {
+                progressArr[index] = guess;
+            }
+
+            Progress = progressArr.ToString();
         }
     }
 }
