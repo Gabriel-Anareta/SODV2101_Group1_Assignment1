@@ -36,5 +36,10 @@ namespace Hangman
 
             return indecies;
         }
+
+        public void UpdateProgress(char guess)      // used to update Progress when a letter is guessed
+        {
+            
+        }
     }
 }
