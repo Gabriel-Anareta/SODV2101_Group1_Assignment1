@@ -8,9 +8,11 @@ namespace Hangman
 {
     internal class GuessWord
     {
-        public GuessWord()
+        public string Word { get; set; }    // Holds string for current word being guessed
+        
+        public GuessWord(string word)
         {
-
+            Word = word;
         }
     }
 }
