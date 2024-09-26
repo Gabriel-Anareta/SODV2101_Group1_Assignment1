@@ -10,10 +10,12 @@ namespace Hangman
     internal class GuessWord
     {
         public string Word { get; set; }        // Holds string for current word being guessed
+        public string Progress { get; set; }    // Holds string for current progress on the guessed word
         
         public GuessWord(string word)
         {
             Word = word;
+
         }
 
         public List<int> GetIndecies(char guess)   // used to find all indecies of a given letter in the guessed word
