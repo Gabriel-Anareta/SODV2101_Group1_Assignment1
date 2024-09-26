@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -16,6 +17,9 @@ namespace Hangman
         {
             Word = word;
 
+            StringBuilder builder = new StringBuilder();
+            builder.Append(' ', word.Length);
+            Progress = builder.ToString();      // initialize Progress as an empty string with length of the current guess word
         }
 
         public List<int> GetIndecies(char guess)   // used to find all indecies of a given letter in the guessed word
