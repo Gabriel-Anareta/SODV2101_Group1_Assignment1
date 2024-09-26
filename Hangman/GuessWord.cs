@@ -8,5 +8,9 @@ namespace Hangman
 {
     internal class GuessWord
     {
+        public GuessWord()
+        {
+
+        }
     }
 }
