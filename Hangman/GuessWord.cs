@@ -21,8 +21,18 @@ namespace Hangman
             Word = word;
 
             StringBuilder builder = new StringBuilder();
-            builder.Append(' ', word.Length);
-            Progress = builder.ToString();      // initialize Progress as an empty string with length of the current guess word
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (word[i] == '-')
+                {
+                    builder.Append('-');
+                    continue;
+                }
+
+                builder.Append(' ');
+            }
+
+            Progress = builder.ToString();      
 
             InvalidCount = 0;
         }
