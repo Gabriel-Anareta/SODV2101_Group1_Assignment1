@@ -68,5 +68,10 @@ namespace Hangman
         {                                   // intended to be called after checking if the guessed letter does not exist in current word
 
         }
+
+        public bool CheckInvalidCount()     // returns true if the maximum amount of incorrect guesses were reached
+        {                                   // intended to be called when checking for ending game states
+
+        }
     }
 }
