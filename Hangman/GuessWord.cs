@@ -71,7 +71,12 @@ namespace Hangman
 
         public bool CheckInvalidCount()     // returns true if the maximum amount of incorrect guesses were reached
         {                                   // intended to be called when checking for ending game states
+            if (InvalidCount == MAX_GUESS)
+            {
+                return true;
+            }
 
+            return false;
         }
     }
 }
