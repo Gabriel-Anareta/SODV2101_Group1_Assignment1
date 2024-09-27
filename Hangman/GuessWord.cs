@@ -55,13 +55,18 @@ namespace Hangman
         }
 
         public bool CheckProgress()     // returns true if Progress has been updated enough to match the word being guessed
-        {                               // idealy called right after UpdateProgress method for checking/updating game state
+        {                               // intended to be called right after UpdateProgress method for checking/updating game state
             if (Progress == Word)
             {
                 return true;
             }
 
             return false;
+        }
+
+        public void UpdateInvalidCount()    // used to update InvalidCount when a letter is incorrectly guessed
+        {                                   // intended to be called after checking if the guessed letter does not exist in current word
+
         }
     }
 }
