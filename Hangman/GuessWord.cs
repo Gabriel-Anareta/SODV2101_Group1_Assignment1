@@ -37,6 +37,11 @@ namespace Hangman
             InvalidCount = 0;
         }
 
+        private string CreateProgress(string word)
+        {
+
+        }
+
         public List<int> GetIndecies(char guess)   // used to find all indecies of a given letter in the guessed word
         {
             List<int> indecies = new List<int>();
