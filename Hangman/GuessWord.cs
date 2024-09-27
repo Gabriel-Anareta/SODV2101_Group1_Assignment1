@@ -48,5 +48,10 @@ namespace Hangman
 
             Progress = progressArr.ToString();
         }
+
+        public bool CheckProgress()     // returns true if Progress has been updated enough to match the word being guessed
+        {
+
+        }
     }
 }
