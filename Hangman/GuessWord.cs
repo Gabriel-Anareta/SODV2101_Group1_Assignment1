@@ -21,6 +21,8 @@ namespace Hangman
             StringBuilder builder = new StringBuilder();
             builder.Append(' ', word.Length);
             Progress = builder.ToString();      // initialize Progress as an empty string with length of the current guess word
+
+            InvalidCount = 0;
         }
 
         public List<int> GetIndecies(char guess)   // used to find all indecies of a given letter in the guessed word
