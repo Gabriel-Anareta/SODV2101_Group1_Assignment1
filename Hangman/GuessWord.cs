@@ -19,8 +19,14 @@ namespace Hangman
         public GuessWord(string word)
         {
             Word = word;
+            Progress = CreateProgress(word);      
+            InvalidCount = 0;
+        }
 
+        private string CreateProgress(string word)      // used to clean up constructor code
+        {
             StringBuilder builder = new StringBuilder();
+
             for (int i = 0; i < word.Length; i++)
             {
                 if (word[i] == '-')
@@ -32,14 +38,7 @@ namespace Hangman
                 builder.Append(' ');
             }
 
-            Progress = builder.ToString();      
-
-            InvalidCount = 0;
-        }
-
-        private string CreateProgress(string word)
-        {
-
+            return builder.ToString();
         }
 
         public List<int> GetIndecies(char guess)   // used to find all indecies of a given letter in the guessed word
