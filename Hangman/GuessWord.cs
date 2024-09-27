@@ -66,7 +66,7 @@ namespace Hangman
 
         public void UpdateInvalidCount()    // used to update InvalidCount when a letter is incorrectly guessed
         {                                   // intended to be called after checking if the guessed letter does not exist in current word
-
+            InvalidCount++;
         }
 
         public bool CheckInvalidCount()     // returns true if the maximum amount of incorrect guesses were reached
