@@ -12,9 +12,9 @@ namespace Hangman
     {
         private const int MAX_GUESS = 5;        // Holds count for maximum guesses - can be adjusted later if needed
 
-        public string Word { get; set; }        // Holds string for current word being guessed
-        public string Progress { get; set; }    // Holds string for current progress on the guessed word
-        public int InvalidCount { get; set; }   // Holds count of incorrect guesses on Word
+        private string Word { get; set; }        // Holds string for current word being guessed
+        private string Progress { get; set; }    // Holds string for current progress on the guessed word
+        private int InvalidCount { get; set; }   // Holds count of incorrect guesses on Word
         
         public GuessWord(string word)
         {
