@@ -14,7 +14,7 @@ namespace Hangman
 
         private string Word { get; set; }        // Holds string for current word being guessed
         private string Progress { get; set; }    // Holds string for current progress on the guessed word
-        private int InvalidCount { get; set; }   // Holds count of incorrect guesses on Word
+        public int InvalidCount { get; private set; }   // Holds count of incorrect guesses on Word
         
         public GuessWord(string word)
         {
