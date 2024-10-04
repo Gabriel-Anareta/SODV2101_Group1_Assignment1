@@ -8,5 +8,10 @@ namespace Hangman
 {
     internal class Game
     {
+        public GuessWord CurrentWord { get; set; }
+        public List<string> Players { get; set; }
+        public int currentPlayerIndex { get; set; }
+
+
     }
 }
