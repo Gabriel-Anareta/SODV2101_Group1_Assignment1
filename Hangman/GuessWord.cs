@@ -111,9 +111,12 @@ namespace Hangman
             Guesses.Add(guess);
         }
 
-        public bool CheckGuess(char guess)
+        public bool CheckGuess(char guess)  // returns true if a specific guess has already been made
         {
-            
+            if (Guesses.Contains(guess))
+                return true;
+
+            return false;
         }
     }
 }
