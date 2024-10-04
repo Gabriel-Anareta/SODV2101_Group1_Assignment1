@@ -34,6 +34,8 @@ namespace Hangman
 
                 char guess = ' '; /* Pass guessed letter to here */
 
+                /* Add code to turn of guess button for current guessed char */
+
                 List<int> guessIndecies = CurrentWord.GetIndecies(guess);
                 
                 if (guessIndecies.Count > 0)

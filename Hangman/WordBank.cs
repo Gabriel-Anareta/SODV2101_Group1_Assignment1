@@ -26,7 +26,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 namespace Hangman
 {
-    public static class WordBank
+    public static class WordBank 
     {
         /* Test words found from https://gist.github.com/alpha-tango/c3d2645817cf4af2aa45 */
 
