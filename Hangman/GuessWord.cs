@@ -106,9 +106,9 @@ namespace Hangman
             return false;
         }
 
-        public void SetGuess()
+        public void SetGuess(char guess)
         {
-
+            Guesses.Add(guess);
         }
 
         public bool CheckGuess(char guess)
