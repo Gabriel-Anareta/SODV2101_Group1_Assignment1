@@ -12,9 +12,11 @@ namespace Hangman
         public List<string> Players { get; set; }
         public int currentPlayerIndex { get; set; }
 
-        public Game()
+        public Game(string word, List<string> players)
         {
-
+            CurrentWord = new GuessWord(word);
+            Players.AddRange(players);
+            currentPlayerIndex = 0;
         }
     }
 }
