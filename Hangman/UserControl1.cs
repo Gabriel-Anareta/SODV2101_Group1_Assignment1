@@ -17,9 +17,22 @@ namespace Hangman
             InitializeComponent();
         }
 
-        public void Start()
+        public void Start()     // Call when the game is started
         {
+            bool playAgain = true;
 
+            while (playAgain)
+            {
+                /* Ask for all player names then pass the player names*/
+
+                List<string> playerNames = new List<string>();
+                string currentWord = WordBank.GetRandomWord();
+
+                Game game = new Game(currentWord, playerNames);
+                game.Start();
+
+                 /* Ask if players want to play again */ 
+            }
         }
     }
 }
