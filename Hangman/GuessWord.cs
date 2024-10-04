@@ -35,7 +35,19 @@ namespace Hangman
                     continue;
                 }
 
-                builder.Append(' ');
+                if (word[i] == '.')
+                {
+                    builder.Append('.');
+                    continue;
+                }
+
+                if (word[i] == ' ')
+                {
+                    builder.Append(' ');
+                    continue;
+                }
+
+                builder.Append('_');
             }
 
             return builder.ToString();
