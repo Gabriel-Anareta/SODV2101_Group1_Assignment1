@@ -16,5 +16,10 @@ namespace Hangman
         {
             InitializeComponent();
         }
+
+        public void Start()
+        {
+
+        }
     }
 }
