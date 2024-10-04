@@ -18,5 +18,10 @@ namespace Hangman
             Players.AddRange(players);
             currentPlayerIndex = 0;
         }
+
+        public void Start()
+        {
+
+        }
     }
 }
