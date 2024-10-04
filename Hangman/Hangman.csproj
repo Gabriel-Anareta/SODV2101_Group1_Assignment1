@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="GuessWord.cs" />
+    <Compile Include="HangmanStates.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
