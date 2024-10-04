@@ -105,5 +105,10 @@ namespace Hangman
 
             return false;
         }
+
+        public bool CheckGuess(char guess)
+        {
+
+        }
     }
 }
