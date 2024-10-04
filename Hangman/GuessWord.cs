@@ -10,11 +10,12 @@ namespace Hangman
 {
     internal class GuessWord
     {
-        private const int MAX_GUESS = 5;        // Holds count for maximum guesses - can be adjusted later if needed
+        private const int MAX_GUESS = 7;        // Holds count for maximum guesses - can be adjusted later if needed
 
         private string Word { get; set; }        // Holds string for current word being guessed
         private string Progress { get; set; }    // Holds string for current progress on the guessed word
         public int InvalidCount { get; private set; }   // Holds count of incorrect guesses on Word
+        public List<char> Guesses { get; private set; } // Holds record of all guessed letters
         
         public GuessWord(string word)
         {
