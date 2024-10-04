@@ -12,6 +12,9 @@ namespace Hangman
         public List<string> Players { get; set; }
         public int currentPlayerIndex { get; set; }
 
+        public Game()
+        {
 
+        }
     }
 }
