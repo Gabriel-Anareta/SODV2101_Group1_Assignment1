@@ -24,51 +24,42 @@ namespace Hangman
 
         public void Start()
         {
-            bool gameEnded = false;
-
             /* Add code here to display the current state of game */
 
-            while (!gameEnded)
+            string currentPlayer = Players[CurrentPlayerIndex];
+
+            /* Add code here to tell player to pick a letter to guess */
+
+            int lastindex = CurrentWord.Guesses.Count - 1;
+            char guess = CurrentWord.Guesses[lastindex].ToCharArray()[0];
+
+            List<int> guessIndecies = CurrentWord.GetIndecies(guess);
+
+            if (guessIndecies.Count > 0)
             {
-                string currentPlayer = Players[CurrentPlayerIndex];
-
-                /* Add code here to tell player to pick a letter to guess */
-                while (TurnInProgress) { }
-
-                int lastindex = CurrentWord.Guesses.Count - 1;
-                char guess = CurrentWord.Guesses[lastindex].ToCharArray()[0];
-
-                List<int> guessIndecies = CurrentWord.GetIndecies(guess);
-                
-                if (guessIndecies.Count > 0)
-                {
-                    CurrentWord.UpdateProgress(guess, guessIndecies);
-                }
-                else
-                {
-                    CurrentWord.UpdateInvalidCount();
-                }
-
-                /* Add code here to display the current state of the guessed word
-                 * current state can be found through CurrentWord.Progress */
-
-                if (CurrentWord.CheckInvalidCount())
-                {
-                    gameEnded = true;
-                    /* Add code here to handle losing player
-                     * you can get the player name through currentPlayer */
-                }
-
-                if (CurrentWord.CheckProgress())
-                {
-                    gameEnded = true;
-                    /* Add code here to handle winning player
-                     * you can get the player name through currentPlayer */
-                }
-
-                CurrentPlayerIndex = CurrentPlayerIndex == Players.Count - 1 ? 0 : CurrentPlayerIndex + 1;
-                TurnInProgress = true;
+                CurrentWord.UpdateProgress(guess, guessIndecies);
             }
+            else
+            {
+                CurrentWord.UpdateInvalidCount();
+            }
+
+            /* Add code here to display the current state of the guessed word
+             * current state can be found through CurrentWord.Progress */
+
+            if (CurrentWord.CheckInvalidCount())
+            {
+                /* Add code here to handle losing player
+                 * you can get the player name through currentPlayer */
+            }
+
+            if (CurrentWord.CheckProgress())
+            {
+                /* Add code here to handle winning player
+                 * you can get the player name through currentPlayer */
+            }
+
+            CurrentPlayerIndex = CurrentPlayerIndex == Players.Count - 1 ? 0 : CurrentPlayerIndex + 1;
         }
     }
 }
