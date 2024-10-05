@@ -122,7 +122,19 @@ namespace Hangman
 
         public string GuessesString()
         {
+            StringBuilder guessesString = new StringBuilder();
 
+            for (int i = 0; i < Guesses.Count; i++)
+            {
+                guessesString.Append(Guesses[i]);
+
+                if (i != Guesses.Count - 1)
+                {
+                    guessesString.Append(", ");
+                }
+            }
+
+            return guessesString.ToString();
         }
     }
 }

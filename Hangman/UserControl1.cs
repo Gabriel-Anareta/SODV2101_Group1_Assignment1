@@ -49,6 +49,7 @@ namespace Hangman
             CurrentGame = new Game(CurrentWord, PlayerNames);
 
             lbl_debug.Text = CurrentWord;
+            lbl_guesses.Text = "No current guesses";
             lbl_hangman.Text = HangmanStates.GetState(0);
             lbl_progress.Text = CurrentGame.CurrentWord.Progress;
         }
@@ -68,6 +69,7 @@ namespace Hangman
             CurrentGame.CurrentWord.SetGuess(letterBtn.Text.ToLower());
             CurrentGame.Start();
 
+            lbl_guesses.Text = "Guesses: " + CurrentGame.CurrentWord.GuessesString();
             lbl_hangman.Text = HangmanStates.GetState(CurrentGame.CurrentWord.InvalidCount);
             lbl_progress.Text = CurrentGame.CurrentWord.Progress;
 
@@ -82,9 +84,6 @@ namespace Hangman
                 /* Add code here to handle winning player
                  * you can get the player name through currentPlayer */
             }
-
-            /* Add code here to display the current state of the guessed word
-             * current state can be found through CurrentWord.Progress */
 
             CurrentGame.CurrentPlayerIndex = 
                 CurrentGame.CurrentPlayerIndex == CurrentGame.Players.Count - 1 
