@@ -1,29 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing.Drawing2D;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Net.NetworkInformation;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.ConstrainedExecution;
-using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Lifetime;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using static System.Windows.Forms.LinkLabel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
-using System.Windows.Forms;
-using System.Xml.Linq;
+
 namespace Hangman
 {
     public static class WordBank 
@@ -39,7 +16,7 @@ namespace Hangman
         {
             Random random = new Random();
             int randomIndex = random.Next(Words.Count);
-            return Words[randomIndex];
+            return Words[randomIndex].ToLower();
         }
     }
 }
