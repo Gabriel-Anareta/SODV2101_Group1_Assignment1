@@ -43,23 +43,6 @@ namespace Hangman
             {
                 CurrentWord.UpdateInvalidCount();
             }
-
-            /* Add code here to display the current state of the guessed word
-             * current state can be found through CurrentWord.Progress */
-
-            if (CurrentWord.CheckInvalidCount())
-            {
-                /* Add code here to handle losing player
-                 * you can get the player name through currentPlayer */
-            }
-
-            if (CurrentWord.CheckProgress())
-            {
-                /* Add code here to handle winning player
-                 * you can get the player name through currentPlayer */
-            }
-
-            CurrentPlayerIndex = CurrentPlayerIndex == Players.Count - 1 ? 0 : CurrentPlayerIndex + 1;
         }
     }
 }
