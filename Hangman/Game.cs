@@ -11,13 +11,15 @@ namespace Hangman
     {
         public GuessWord CurrentWord { get; set; }      // stores the current guessing word in game sequence
         public List<string> Players { get; set; }       // stores a list of names of players
-        public int currentPlayerIndex { get; set; }     // stores the current index of the currently guessing player
+        public int CurrentPlayerIndex { get; set; }     // stores the current index of the currently guessing player
+        public bool TurnInProgress { get; set; }
 
         public Game(string word, List<string> players)
         {
             CurrentWord = new GuessWord(word);
             Players = new List<string>(players);
-            currentPlayerIndex = 0;
+            CurrentPlayerIndex = 0;
+            TurnInProgress = true;
         }
 
         public void Start()
@@ -28,9 +30,13 @@ namespace Hangman
 
             while (!gameEnded)
             {
-                string currentPlayer = Players[currentPlayerIndex];
+                string currentPlayer = Players[CurrentPlayerIndex];
 
                 /* Add code here to tell player to pick a letter to guess */
+                while ()
+                {
+
+                }
 
                 char guess = ' '; /* Pass guessed letter to here */
 
@@ -66,7 +72,7 @@ namespace Hangman
                     break;
                 }
 
-                currentPlayerIndex = currentPlayerIndex == Players.Count - 1 ? 0 : currentPlayerIndex + 1;
+                CurrentPlayerIndex = CurrentPlayerIndex == Players.Count - 1 ? 0 : CurrentPlayerIndex + 1;
             }
         }
     }
