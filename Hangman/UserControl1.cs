@@ -20,28 +20,36 @@ namespace Hangman
         public UserControl1()
         {
             InitializeComponent();
+
             LetterButtons = new List<Button>
             {
                 btn_a, btn_b, btn_c, btn_d, btn_e, btn_f, btn_g, btn_h, btn_i, btn_j, btn_k, btn_l, btn_m,
                 btn_n, btn_o, btn_p, btn_q, btn_r, btn_s, btn_t, btn_u, btn_v, btn_w, btn_x, btn_y, btn_z
             };
-            foreach(Button button in LetterButtons)
-            {
-                button.Visible = false;
-            }
+
+            SetLetterBtnVisible(false);
+
             lbl_hangman.Text = "";
             lbl_progress.Text = "";
             lbl_error.Text = "";
             lbl_guesses.Text = "";
+            lbl_winlose.Text = "";
+            lbl_finalword.Text = "";
+
             lbl_debug.Text = "";
+        }
+
+        public void SetLetterBtnVisible(bool visible)
+        {
+            foreach (Button button in LetterButtons)
+            {
+                button.Visible = visible;
+            }
         }
 
         public void Start()     // Call when the game is started
         {
-            foreach (Button button in LetterButtons)
-            {
-                button.Visible = true;
-            }
+            SetLetterBtnVisible(true);
 
             PlayerNames = new List<string> { "john", "mary", "joey" };
             CurrentWord = WordBank.GetRandomWord();

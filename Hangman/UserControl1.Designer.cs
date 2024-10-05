@@ -60,6 +60,12 @@
             this.lbl_error = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
             this.lbl_debug = new System.Windows.Forms.Label();
+            this.lbl_winlose = new System.Windows.Forms.Label();
+            this.lbl_finalword = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_playernames = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_playernameslist = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_a
@@ -334,7 +340,7 @@
             // lbl_progress
             // 
             this.lbl_progress.AutoSize = true;
-            this.lbl_progress.Location = new System.Drawing.Point(259, 156);
+            this.lbl_progress.Location = new System.Drawing.Point(33, 203);
             this.lbl_progress.Name = "lbl_progress";
             this.lbl_progress.Size = new System.Drawing.Size(118, 16);
             this.lbl_progress.TabIndex = 27;
@@ -360,9 +366,9 @@
             // 
             // btn_start
             // 
-            this.btn_start.Location = new System.Drawing.Point(345, 175);
+            this.btn_start.Location = new System.Drawing.Point(468, 204);
             this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(85, 72);
+            this.btn_start.Size = new System.Drawing.Size(97, 71);
             this.btn_start.TabIndex = 30;
             this.btn_start.Text = "Start";
             this.btn_start.UseVisualStyleBackColor = true;
@@ -371,16 +377,74 @@
             // lbl_debug
             // 
             this.lbl_debug.AutoSize = true;
-            this.lbl_debug.Location = new System.Drawing.Point(259, 35);
+            this.lbl_debug.Location = new System.Drawing.Point(248, 35);
             this.lbl_debug.Name = "lbl_debug";
             this.lbl_debug.Size = new System.Drawing.Size(48, 16);
             this.lbl_debug.TabIndex = 31;
             this.lbl_debug.Text = "Debug";
             // 
+            // lbl_winlose
+            // 
+            this.lbl_winlose.AutoSize = true;
+            this.lbl_winlose.Location = new System.Drawing.Point(248, 97);
+            this.lbl_winlose.Name = "lbl_winlose";
+            this.lbl_winlose.Size = new System.Drawing.Size(136, 16);
+            this.lbl_winlose.TabIndex = 32;
+            this.lbl_winlose.Text = "Winner/Loser Display";
+            // 
+            // lbl_finalword
+            // 
+            this.lbl_finalword.AutoSize = true;
+            this.lbl_finalword.Location = new System.Drawing.Point(248, 130);
+            this.lbl_finalword.Name = "lbl_finalword";
+            this.lbl_finalword.Size = new System.Drawing.Size(116, 16);
+            this.lbl_finalword.TabIndex = 33;
+            this.lbl_finalword.Text = "End Word Display";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(251, 217);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(129, 22);
+            this.textBox1.TabIndex = 34;
+            // 
+            // lbl_playernames
+            // 
+            this.lbl_playernames.AutoSize = true;
+            this.lbl_playernames.Location = new System.Drawing.Point(248, 188);
+            this.lbl_playernames.Name = "lbl_playernames";
+            this.lbl_playernames.Size = new System.Drawing.Size(51, 16);
+            this.lbl_playernames.TabIndex = 35;
+            this.lbl_playernames.Text = "Names";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(251, 245);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 30);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Add this player!";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_playernameslist
+            // 
+            this.lbl_playernameslist.AutoSize = true;
+            this.lbl_playernameslist.Location = new System.Drawing.Point(248, 289);
+            this.lbl_playernameslist.Name = "lbl_playernameslist";
+            this.lbl_playernameslist.Size = new System.Drawing.Size(74, 16);
+            this.lbl_playernameslist.TabIndex = 37;
+            this.lbl_playernameslist.Text = "Names List";
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_playernameslist);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbl_playernames);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbl_finalword);
+            this.Controls.Add(this.lbl_winlose);
             this.Controls.Add(this.lbl_debug);
             this.Controls.Add(this.btn_start);
             this.Controls.Add(this.lbl_error);
@@ -454,5 +518,11 @@
         private System.Windows.Forms.Label lbl_error;
         private System.Windows.Forms.Button btn_start;
         private System.Windows.Forms.Label lbl_debug;
+        private System.Windows.Forms.Label lbl_winlose;
+        private System.Windows.Forms.Label lbl_finalword;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_playernames;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_playernameslist;
     }
 }
