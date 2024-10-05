@@ -29,26 +29,28 @@ namespace Hangman
             {
                 button.Visible = false;
             }
-
-
+            lbl_hangman.Text = "";
+            lbl_progress.Text = "";
+            lbl_error.Text = "";
+            lbl_guesses.Text = "";
+            lbl_debug.Text = "";
         }
 
         public void Start()     // Call when the game is started
         {
-            bool playAgain = true;
-
-            while (playAgain)
+            foreach (Button button in LetterButtons)
             {
-                /* Ask for all player names then pass the player names*/
-
-                PlayerNames = new List<string>();
-                CurrentWord = WordBank.GetRandomWord();
-
-                CurrentGame = new Game(CurrentWord, PlayerNames);
-                CurrentGame.Start();
-
-                /* Ask if players want to play again */ 
+                button.Visible = true;
             }
+
+            PlayerNames = new List<string> { "john", "mary", "joey" };
+            CurrentWord = WordBank.GetRandomWord();
+
+            CurrentGame = new Game(CurrentWord, PlayerNames);
+
+            lbl_debug.Text = CurrentWord;
+            lbl_hangman.Text = HangmanStates.GetState(0);
+            lbl_progress.Text = CurrentGame.CurrentWord.Progress;
         }
 
         private void HandleLetterBtnClick(object sender, EventArgs e)
@@ -59,13 +61,40 @@ namespace Hangman
 
             if (check)
             {
-                /* Display err message for already checked symbol*/
+                lbl_error.Text = letterBtn.Text + " has already been guessed";
+                return;
             }
-            else
+
+            CurrentGame.CurrentWord.SetGuess(letterBtn.Text);
+            CurrentGame.Start();
+
+            lbl_hangman.Text = HangmanStates.GetState(CurrentGame.CurrentWord.InvalidCount);
+            lbl_progress.Text = CurrentGame.CurrentWord.Progress;
+
+            if (CurrentGame.CurrentWord.CheckInvalidCount())
             {
-                CurrentGame.CurrentWord.SetGuess(letterBtn.Text);
-                CurrentGame.TurnInProgress = false;
+                /* Add code here to handle losing player
+                 * you can get the player name through currentPlayer */
             }
+
+            if (CurrentGame.CurrentWord.CheckProgress())
+            {
+                /* Add code here to handle winning player
+                 * you can get the player name through currentPlayer */
+            }
+
+            /* Add code here to display the current state of the guessed word
+             * current state can be found through CurrentWord.Progress */
+
+            CurrentGame.CurrentPlayerIndex = 
+                CurrentGame.CurrentPlayerIndex == CurrentGame.Players.Count - 1 
+                ? 0 : CurrentGame.CurrentPlayerIndex + 1;
+        }
+
+        private void btn_start_Click(object sender, EventArgs e)
+        {
+            btn_start.Visible = false;
+            Start();
         }
     }
 }

@@ -55,6 +55,11 @@
             this.btn_z = new System.Windows.Forms.Button();
             this.btn_y = new System.Windows.Forms.Button();
             this.lbl_hangman = new System.Windows.Forms.Label();
+            this.lbl_progress = new System.Windows.Forms.Label();
+            this.lbl_guesses = new System.Windows.Forms.Label();
+            this.lbl_error = new System.Windows.Forms.Label();
+            this.btn_start = new System.Windows.Forms.Button();
+            this.lbl_debug = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_a
@@ -326,10 +331,61 @@
             this.lbl_hangman.TabIndex = 26;
             this.lbl_hangman.Text = "Hangman label";
             // 
+            // lbl_progress
+            // 
+            this.lbl_progress.AutoSize = true;
+            this.lbl_progress.Location = new System.Drawing.Point(259, 156);
+            this.lbl_progress.Name = "lbl_progress";
+            this.lbl_progress.Size = new System.Drawing.Size(118, 16);
+            this.lbl_progress.TabIndex = 27;
+            this.lbl_progress.Text = "Progress On Word";
+            // 
+            // lbl_guesses
+            // 
+            this.lbl_guesses.AutoSize = true;
+            this.lbl_guesses.Location = new System.Drawing.Point(33, 289);
+            this.lbl_guesses.Name = "lbl_guesses";
+            this.lbl_guesses.Size = new System.Drawing.Size(101, 16);
+            this.lbl_guesses.TabIndex = 28;
+            this.lbl_guesses.Text = "Guessed letters";
+            // 
+            // lbl_error
+            // 
+            this.lbl_error.AutoSize = true;
+            this.lbl_error.Location = new System.Drawing.Point(33, 259);
+            this.lbl_error.Name = "lbl_error";
+            this.lbl_error.Size = new System.Drawing.Size(96, 16);
+            this.lbl_error.TabIndex = 29;
+            this.lbl_error.Text = "Error message";
+            // 
+            // btn_start
+            // 
+            this.btn_start.Location = new System.Drawing.Point(345, 175);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(85, 72);
+            this.btn_start.TabIndex = 30;
+            this.btn_start.Text = "Start";
+            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
+            // 
+            // lbl_debug
+            // 
+            this.lbl_debug.AutoSize = true;
+            this.lbl_debug.Location = new System.Drawing.Point(259, 35);
+            this.lbl_debug.Name = "lbl_debug";
+            this.lbl_debug.Size = new System.Drawing.Size(48, 16);
+            this.lbl_debug.TabIndex = 31;
+            this.lbl_debug.Text = "Debug";
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_debug);
+            this.Controls.Add(this.btn_start);
+            this.Controls.Add(this.lbl_error);
+            this.Controls.Add(this.lbl_guesses);
+            this.Controls.Add(this.lbl_progress);
             this.Controls.Add(this.lbl_hangman);
             this.Controls.Add(this.btn_y);
             this.Controls.Add(this.btn_z);
@@ -393,5 +449,10 @@
         private System.Windows.Forms.Button btn_z;
         private System.Windows.Forms.Button btn_y;
         private System.Windows.Forms.Label lbl_hangman;
+        private System.Windows.Forms.Label lbl_progress;
+        private System.Windows.Forms.Label lbl_guesses;
+        private System.Windows.Forms.Label lbl_error;
+        private System.Windows.Forms.Button btn_start;
+        private System.Windows.Forms.Label lbl_debug;
     }
 }

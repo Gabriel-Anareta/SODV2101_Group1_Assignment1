@@ -24,14 +24,8 @@ namespace Hangman
 
         public void Start()
         {
-            /* Add code here to display the current state of game */
-
-            string currentPlayer = Players[CurrentPlayerIndex];
-
-            /* Add code here to tell player to pick a letter to guess */
-
             int lastindex = CurrentWord.Guesses.Count - 1;
-            char guess = CurrentWord.Guesses[lastindex].ToCharArray()[0];
+            char guess = CurrentWord.Guesses[lastindex].ToLower().ToCharArray()[0];
 
             List<int> guessIndecies = CurrentWord.GetIndecies(guess);
 
