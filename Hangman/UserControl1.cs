@@ -113,5 +113,27 @@ namespace Hangman
             btn_start.Visible = false;
             Start();
         }
+
+        private void btn_addPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public string PlayersString()
+        {
+            StringBuilder playersString = new StringBuilder();
+
+            for (int i = 0; i < PlayerNames.Count; i++)
+            {
+                playersString.Append(PlayerNames[i]);
+
+                if (i != PlayerNames.Count - 1)
+                {
+                    playersString.Append(", ");
+                }
+            }
+
+            return playersString.ToString();
+        }
     }
 }

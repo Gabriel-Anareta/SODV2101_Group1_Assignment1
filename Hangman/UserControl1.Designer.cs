@@ -64,7 +64,7 @@
             this.lbl_finalword = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbl_playernames = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_addPlayer = new System.Windows.Forms.Button();
             this.lbl_playernameslist = new System.Windows.Forms.Label();
             this.lbl_nameserror = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -418,14 +418,15 @@
             this.lbl_playernames.TabIndex = 35;
             this.lbl_playernames.Text = "Names";
             // 
-            // button1
+            // btn_addPlayer
             // 
-            this.button1.Location = new System.Drawing.Point(251, 245);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 30);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Add this player!";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_addPlayer.Location = new System.Drawing.Point(251, 245);
+            this.btn_addPlayer.Name = "btn_addPlayer";
+            this.btn_addPlayer.Size = new System.Drawing.Size(129, 30);
+            this.btn_addPlayer.TabIndex = 36;
+            this.btn_addPlayer.Text = "Add this player!";
+            this.btn_addPlayer.UseVisualStyleBackColor = true;
+            this.btn_addPlayer.Click += new System.EventHandler(this.btn_addPlayer_Click);
             // 
             // lbl_playernameslist
             // 
@@ -451,7 +452,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbl_nameserror);
             this.Controls.Add(this.lbl_playernameslist);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_addPlayer);
             this.Controls.Add(this.lbl_playernames);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_finalword);
@@ -533,7 +534,7 @@
         private System.Windows.Forms.Label lbl_finalword;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbl_playernames;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_addPlayer;
         private System.Windows.Forms.Label lbl_playernameslist;
         private System.Windows.Forms.Label lbl_nameserror;
     }
