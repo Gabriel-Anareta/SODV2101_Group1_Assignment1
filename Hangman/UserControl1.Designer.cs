@@ -62,7 +62,7 @@
             this.lbl_debug = new System.Windows.Forms.Label();
             this.lbl_winlose = new System.Windows.Forms.Label();
             this.lbl_finalword = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbx_player = new System.Windows.Forms.TextBox();
             this.lbl_playernames = new System.Windows.Forms.Label();
             this.btn_addPlayer = new System.Windows.Forms.Button();
             this.lbl_playernameslist = new System.Windows.Forms.Label();
@@ -402,12 +402,12 @@
             this.lbl_finalword.TabIndex = 33;
             this.lbl_finalword.Text = "End Word Display";
             // 
-            // textBox1
+            // txtbx_player
             // 
-            this.textBox1.Location = new System.Drawing.Point(251, 217);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 22);
-            this.textBox1.TabIndex = 34;
+            this.txtbx_player.Location = new System.Drawing.Point(251, 217);
+            this.txtbx_player.Name = "txtbx_player";
+            this.txtbx_player.Size = new System.Drawing.Size(129, 22);
+            this.txtbx_player.TabIndex = 34;
             // 
             // lbl_playernames
             // 
@@ -454,7 +454,7 @@
             this.Controls.Add(this.lbl_playernameslist);
             this.Controls.Add(this.btn_addPlayer);
             this.Controls.Add(this.lbl_playernames);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbx_player);
             this.Controls.Add(this.lbl_finalword);
             this.Controls.Add(this.lbl_winlose);
             this.Controls.Add(this.lbl_debug);
@@ -532,7 +532,7 @@
         private System.Windows.Forms.Label lbl_debug;
         private System.Windows.Forms.Label lbl_winlose;
         private System.Windows.Forms.Label lbl_finalword;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbx_player;
         private System.Windows.Forms.Label lbl_playernames;
         private System.Windows.Forms.Button btn_addPlayer;
         private System.Windows.Forms.Label lbl_playernameslist;

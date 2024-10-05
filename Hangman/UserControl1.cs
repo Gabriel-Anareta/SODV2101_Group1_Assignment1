@@ -107,16 +107,22 @@ namespace Hangman
         {
             if (PlayerNames.Count == 0)
             {
-
+                lbl_nameserror.Text = "There must be at least 1 player inputted";
             }
             
             btn_start.Visible = false;
+            lbl_playernames.Visible = false;
+            lbl_playernameslist.Visible = false;
+            txtbx_player.Visible = false;
             Start();
         }
 
         private void btn_addPlayer_Click(object sender, EventArgs e)
         {
-
+            string player =  txtbx_player.Text;
+            PlayerNames.Add(player);
+            txtbx_player.Text = "";
+            lbl_playernameslist.Text = PlayersString();
         }
 
         public string PlayersString()
@@ -133,7 +139,7 @@ namespace Hangman
                 }
             }
 
-            return playersString.ToString();
+            return "All players: " + playersString.ToString();
         }
     }
 }
