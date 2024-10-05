@@ -16,6 +16,7 @@ namespace Hangman
         public string CurrentWord { get; set; }
         public List<string> PlayerNames { get; set; }
         public List<Button> LetterButtons { get; set; }
+        public bool GameEnded { get; set; } = false;
         
         public UserControl1()
         {
@@ -37,9 +38,11 @@ namespace Hangman
             lbl_guesses.Text = "";
             lbl_winlose.Text = "";
             lbl_finalword.Text = "";
+            lbl_currentPlayer.Text = "";
 
             lbl_playernames.Text = "Input player names: ";
             lbl_playernameslist.Text = "";
+            lbl_nameserror.Text = "";
 
             lbl_debug.Text = "";
         }
@@ -56,7 +59,6 @@ namespace Hangman
         {
             SetLetterBtnVisible(true);
 
-            PlayerNames = new List<string> { "john", "mary", "joey" };
             CurrentWord = WordBank.GetRandomWord();
 
             CurrentGame = new Game(CurrentWord, PlayerNames);
@@ -65,10 +67,14 @@ namespace Hangman
             lbl_guesses.Text = "No current guesses";
             lbl_hangman.Text = HangmanStates.GetState(0);
             lbl_progress.Text = CurrentGame.CurrentWord.Progress;
+            lbl_currentPlayer.Text = PlayerNames[CurrentGame.CurrentPlayerIndex];
         }
 
         private void HandleLetterBtnClick(object sender, EventArgs e)
         {
+            if (GameEnded)
+                return;
+            
             Button letterBtn = (Button)sender;
 
             bool check = CurrentGame.CurrentWord.CheckGuess(letterBtn.Text.ToLower());
@@ -88,19 +94,25 @@ namespace Hangman
 
             if (CurrentGame.CurrentWord.CheckInvalidCount())
             {
-                /* Add code here to handle losing player
-                 * you can get the player name through currentPlayer */
+                lbl_finalword.Text = "The word was " + CurrentGame.CurrentWord.Word;
+                lbl_winlose.Text = PlayerNames[CurrentGame.CurrentPlayerIndex] + " lost!";
+                GameEnded = true;
+                return;
             }
 
             if (CurrentGame.CurrentWord.CheckProgress())
             {
-                /* Add code here to handle winning player
-                 * you can get the player name through currentPlayer */
+                lbl_finalword.Text = "The word was " + CurrentGame.CurrentWord.Word;
+                lbl_winlose.Text = PlayerNames[CurrentGame.CurrentPlayerIndex] + " won!";
+                GameEnded = true;
+                return;
             }
 
             CurrentGame.CurrentPlayerIndex = 
                 CurrentGame.CurrentPlayerIndex == CurrentGame.Players.Count - 1 
                 ? 0 : CurrentGame.CurrentPlayerIndex + 1;
+
+            lbl_currentPlayer.Text = PlayerNames[CurrentGame.CurrentPlayerIndex];
         }
 
         private void btn_start_Click(object sender, EventArgs e)
@@ -108,9 +120,11 @@ namespace Hangman
             if (PlayerNames.Count == 0)
             {
                 lbl_nameserror.Text = "There must be at least 1 player inputted";
+                return;
             }
             
             btn_start.Visible = false;
+            btn_addPlayer.Visible = false;
             lbl_playernames.Visible = false;
             lbl_playernameslist.Visible = false;
             txtbx_player.Visible = false;
@@ -120,6 +134,14 @@ namespace Hangman
         private void btn_addPlayer_Click(object sender, EventArgs e)
         {
             string player =  txtbx_player.Text;
+
+            if (player.Trim() == "")
+            {
+                lbl_playernameslist.Text = "Player name cannot be blank";
+                txtbx_player.Text = "";
+                return;
+            }
+
             PlayerNames.Add(player);
             txtbx_player.Text = "";
             lbl_playernameslist.Text = PlayersString();

@@ -67,6 +67,7 @@
             this.btn_addPlayer = new System.Windows.Forms.Button();
             this.lbl_playernameslist = new System.Windows.Forms.Label();
             this.lbl_nameserror = new System.Windows.Forms.Label();
+            this.lbl_currentPlayer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_a
@@ -446,10 +447,20 @@
             this.lbl_nameserror.TabIndex = 38;
             this.lbl_nameserror.Text = "Error message";
             // 
+            // lbl_currentPlayer
+            // 
+            this.lbl_currentPlayer.AutoSize = true;
+            this.lbl_currentPlayer.Location = new System.Drawing.Point(248, 65);
+            this.lbl_currentPlayer.Name = "lbl_currentPlayer";
+            this.lbl_currentPlayer.Size = new System.Drawing.Size(140, 16);
+            this.lbl_currentPlayer.TabIndex = 39;
+            this.lbl_currentPlayer.Text = "Current Player Display";
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_currentPlayer);
             this.Controls.Add(this.lbl_nameserror);
             this.Controls.Add(this.lbl_playernameslist);
             this.Controls.Add(this.btn_addPlayer);
@@ -537,5 +548,6 @@
         private System.Windows.Forms.Button btn_addPlayer;
         private System.Windows.Forms.Label lbl_playernameslist;
         private System.Windows.Forms.Label lbl_nameserror;
+        private System.Windows.Forms.Label lbl_currentPlayer;
     }
 }
