@@ -21,6 +21,8 @@ namespace Hangman
         {
             InitializeComponent();
 
+            PlayerNames = new List<string>();
+
             LetterButtons = new List<Button>
             {
                 btn_a, btn_b, btn_c, btn_d, btn_e, btn_f, btn_g, btn_h, btn_i, btn_j, btn_k, btn_l, btn_m,
@@ -31,10 +33,13 @@ namespace Hangman
 
             lbl_hangman.Text = "";
             lbl_progress.Text = "";
-            lbl_error.Text = "";
+            lbl_lettererror.Text = "";
             lbl_guesses.Text = "";
             lbl_winlose.Text = "";
             lbl_finalword.Text = "";
+
+            lbl_playernames.Text = "Input player names: ";
+            lbl_playernameslist.Text = "";
 
             lbl_debug.Text = "";
         }
@@ -70,7 +75,7 @@ namespace Hangman
 
             if (check)
             {
-                lbl_error.Text = letterBtn.Text + " has already been guessed";
+                lbl_lettererror.Text = letterBtn.Text + " has already been guessed";
                 return;
             }
 
@@ -100,6 +105,11 @@ namespace Hangman
 
         private void btn_start_Click(object sender, EventArgs e)
         {
+            if (PlayerNames.Count == 0)
+            {
+
+            }
+            
             btn_start.Visible = false;
             Start();
         }

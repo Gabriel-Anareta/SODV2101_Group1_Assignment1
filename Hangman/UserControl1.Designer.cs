@@ -57,7 +57,7 @@
             this.lbl_hangman = new System.Windows.Forms.Label();
             this.lbl_progress = new System.Windows.Forms.Label();
             this.lbl_guesses = new System.Windows.Forms.Label();
-            this.lbl_error = new System.Windows.Forms.Label();
+            this.lbl_lettererror = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
             this.lbl_debug = new System.Windows.Forms.Label();
             this.lbl_winlose = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.lbl_playernames = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_playernameslist = new System.Windows.Forms.Label();
+            this.lbl_nameserror = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_a
@@ -355,18 +356,18 @@
             this.lbl_guesses.TabIndex = 28;
             this.lbl_guesses.Text = "Guessed letters";
             // 
-            // lbl_error
+            // lbl_lettererror
             // 
-            this.lbl_error.AutoSize = true;
-            this.lbl_error.Location = new System.Drawing.Point(33, 259);
-            this.lbl_error.Name = "lbl_error";
-            this.lbl_error.Size = new System.Drawing.Size(96, 16);
-            this.lbl_error.TabIndex = 29;
-            this.lbl_error.Text = "Error message";
+            this.lbl_lettererror.AutoSize = true;
+            this.lbl_lettererror.Location = new System.Drawing.Point(33, 259);
+            this.lbl_lettererror.Name = "lbl_lettererror";
+            this.lbl_lettererror.Size = new System.Drawing.Size(96, 16);
+            this.lbl_lettererror.TabIndex = 29;
+            this.lbl_lettererror.Text = "Error message";
             // 
             // btn_start
             // 
-            this.btn_start.Location = new System.Drawing.Point(468, 204);
+            this.btn_start.Location = new System.Drawing.Point(456, 203);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(97, 71);
             this.btn_start.TabIndex = 30;
@@ -435,10 +436,20 @@
             this.lbl_playernameslist.TabIndex = 37;
             this.lbl_playernameslist.Text = "Names List";
             // 
+            // lbl_nameserror
+            // 
+            this.lbl_nameserror.AutoSize = true;
+            this.lbl_nameserror.Location = new System.Drawing.Point(457, 288);
+            this.lbl_nameserror.Name = "lbl_nameserror";
+            this.lbl_nameserror.Size = new System.Drawing.Size(96, 16);
+            this.lbl_nameserror.TabIndex = 38;
+            this.lbl_nameserror.Text = "Error message";
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_nameserror);
             this.Controls.Add(this.lbl_playernameslist);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_playernames);
@@ -447,7 +458,7 @@
             this.Controls.Add(this.lbl_winlose);
             this.Controls.Add(this.lbl_debug);
             this.Controls.Add(this.btn_start);
-            this.Controls.Add(this.lbl_error);
+            this.Controls.Add(this.lbl_lettererror);
             this.Controls.Add(this.lbl_guesses);
             this.Controls.Add(this.lbl_progress);
             this.Controls.Add(this.lbl_hangman);
@@ -515,7 +526,7 @@
         private System.Windows.Forms.Label lbl_hangman;
         private System.Windows.Forms.Label lbl_progress;
         private System.Windows.Forms.Label lbl_guesses;
-        private System.Windows.Forms.Label lbl_error;
+        private System.Windows.Forms.Label lbl_lettererror;
         private System.Windows.Forms.Button btn_start;
         private System.Windows.Forms.Label lbl_debug;
         private System.Windows.Forms.Label lbl_winlose;
@@ -524,5 +535,6 @@
         private System.Windows.Forms.Label lbl_playernames;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_playernameslist;
+        private System.Windows.Forms.Label lbl_nameserror;
     }
 }
