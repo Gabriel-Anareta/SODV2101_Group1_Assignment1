@@ -119,5 +119,10 @@ namespace Hangman
 
             return false;
         }
+
+        public string GuessesString()
+        {
+
+        }
     }
 }
