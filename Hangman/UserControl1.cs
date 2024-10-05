@@ -57,7 +57,7 @@ namespace Hangman
         {
             Button letterBtn = (Button)sender;
 
-            bool check = CurrentGame.CurrentWord.CheckGuess(letterBtn.Text);
+            bool check = CurrentGame.CurrentWord.CheckGuess(letterBtn.Text.ToLower());
 
             if (check)
             {
@@ -65,7 +65,7 @@ namespace Hangman
                 return;
             }
 
-            CurrentGame.CurrentWord.SetGuess(letterBtn.Text);
+            CurrentGame.CurrentWord.SetGuess(letterBtn.Text.ToLower());
             CurrentGame.Start();
 
             lbl_hangman.Text = HangmanStates.GetState(CurrentGame.CurrentWord.InvalidCount);

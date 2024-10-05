@@ -79,7 +79,7 @@ namespace Hangman
                 progressArr[index] = guess;
             }
 
-            Progress = progressArr.ToString();
+            Progress = new string(progressArr);
         }
 
         public bool CheckProgress()     // returns true if Progress has been updated enough to match the word being guessed
