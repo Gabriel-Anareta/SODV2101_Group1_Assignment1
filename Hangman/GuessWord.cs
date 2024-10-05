@@ -15,7 +15,7 @@ namespace Hangman
         private string Word { get; set; }        // Holds string for current word being guessed
         private string Progress { get; set; }    // Holds string for current progress on the guessed word
         public int InvalidCount { get; private set; }   // Holds count of incorrect guesses on Word
-        public List<char> Guesses { get; private set; } // Holds record of all guessed letters
+        public List<string> Guesses { get; private set; } // Holds record of all guessed letters
         
         public GuessWord(string word)
         {
@@ -106,12 +106,12 @@ namespace Hangman
             return false;
         }
 
-        public void SetGuess(char guess)
+        public void SetGuess(string guess)
         {
             Guesses.Add(guess);
         }
 
-        public bool CheckGuess(char guess)  // returns true if a specific guess has already been made
+        public bool CheckGuess(string guess)  // returns true if a specific guess has already been made
         {
             if (Guesses.Contains(guess))
                 return true;

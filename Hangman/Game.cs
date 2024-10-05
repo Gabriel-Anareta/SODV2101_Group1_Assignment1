@@ -33,14 +33,10 @@ namespace Hangman
                 string currentPlayer = Players[CurrentPlayerIndex];
 
                 /* Add code here to tell player to pick a letter to guess */
-                while ()
-                {
+                while (TurnInProgress) { }
 
-                }
-
-                char guess = ' '; /* Pass guessed letter to here */
-
-                /* Add code to turn of guess button for current guessed char */
+                int lastindex = CurrentWord.Guesses.Count - 1;
+                char guess = CurrentWord.Guesses[lastindex].ToCharArray()[0];
 
                 List<int> guessIndecies = CurrentWord.GetIndecies(guess);
                 
@@ -61,7 +57,6 @@ namespace Hangman
                     gameEnded = true;
                     /* Add code here to handle losing player
                      * you can get the player name through currentPlayer */
-                    break;
                 }
 
                 if (CurrentWord.CheckProgress())
@@ -69,10 +64,10 @@ namespace Hangman
                     gameEnded = true;
                     /* Add code here to handle winning player
                      * you can get the player name through currentPlayer */
-                    break;
                 }
 
                 CurrentPlayerIndex = CurrentPlayerIndex == Players.Count - 1 ? 0 : CurrentPlayerIndex + 1;
+                TurnInProgress = true;
             }
         }
     }
