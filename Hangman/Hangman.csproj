@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="GuessWord.cs" />
+    <Compile Include="HangmanStates.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -51,6 +52,7 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordBank.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

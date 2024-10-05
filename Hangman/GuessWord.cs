@@ -10,17 +10,19 @@ namespace Hangman
 {
     internal class GuessWord
     {
-        private const int MAX_GUESS = 5;        // Holds count for maximum guesses - can be adjusted later if needed
+        private const int MAX_GUESS = 7;        // Holds count for maximum guesses - can be adjusted later if needed
 
-        private string Word { get; set; }        // Holds string for current word being guessed
-        private string Progress { get; set; }    // Holds string for current progress on the guessed word
-        private int InvalidCount { get; set; }   // Holds count of incorrect guesses on Word
+        public string Word { get; private set; }        // Holds string for current word being guessed
+        public string Progress { get; private set; }    // Holds string for current progress on the guessed word
+        public int InvalidCount { get; private set; }   // Holds count of incorrect guesses on Word
+        public List<string> Guesses { get; private set; } // Holds record of all guessed letters
         
         public GuessWord(string word)
         {
             Word = word;
             Progress = CreateProgress(word);      
             InvalidCount = 0;
+            Guesses = new List<string>();
         }
 
         private string CreateProgress(string word)      // used to clean up constructor code
@@ -77,7 +79,7 @@ namespace Hangman
                 progressArr[index] = guess;
             }
 
-            Progress = progressArr.ToString();
+            Progress = new string(progressArr);
         }
 
         public bool CheckProgress()     // returns true if Progress has been updated enough to match the word being guessed
@@ -103,6 +105,36 @@ namespace Hangman
             }
 
             return false;
+        }
+
+        public void SetGuess(string guess)
+        {
+            Guesses.Add(guess);
+        }
+
+        public bool CheckGuess(string guess)  // returns true if a specific guess has already been made
+        {
+            if (Guesses.Contains(guess))
+                return true;
+
+            return false;
+        }
+
+        public string GuessesString()
+        {
+            StringBuilder guessesString = new StringBuilder();
+
+            for (int i = 0; i < Guesses.Count; i++)
+            {
+                guessesString.Append(Guesses[i]);
+
+                if (i != Guesses.Count - 1)
+                {
+                    guessesString.Append(", ");
+                }
+            }
+
+            return guessesString.ToString();
         }
     }
 }
