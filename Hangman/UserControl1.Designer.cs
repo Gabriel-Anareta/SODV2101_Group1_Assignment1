@@ -59,7 +59,6 @@
             this.lbl_guesses = new System.Windows.Forms.Label();
             this.lbl_lettererror = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
-            this.lbl_debug = new System.Windows.Forms.Label();
             this.lbl_winlose = new System.Windows.Forms.Label();
             this.lbl_finalword = new System.Windows.Forms.Label();
             this.txtbx_player = new System.Windows.Forms.TextBox();
@@ -376,15 +375,6 @@
             this.btn_start.UseVisualStyleBackColor = true;
             this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
             // 
-            // lbl_debug
-            // 
-            this.lbl_debug.AutoSize = true;
-            this.lbl_debug.Location = new System.Drawing.Point(248, 35);
-            this.lbl_debug.Name = "lbl_debug";
-            this.lbl_debug.Size = new System.Drawing.Size(48, 16);
-            this.lbl_debug.TabIndex = 31;
-            this.lbl_debug.Text = "Debug";
-            // 
             // lbl_winlose
             // 
             this.lbl_winlose.AutoSize = true;
@@ -468,7 +458,6 @@
             this.Controls.Add(this.txtbx_player);
             this.Controls.Add(this.lbl_finalword);
             this.Controls.Add(this.lbl_winlose);
-            this.Controls.Add(this.lbl_debug);
             this.Controls.Add(this.btn_start);
             this.Controls.Add(this.lbl_lettererror);
             this.Controls.Add(this.lbl_guesses);
@@ -540,7 +529,6 @@
         private System.Windows.Forms.Label lbl_guesses;
         private System.Windows.Forms.Label lbl_lettererror;
         private System.Windows.Forms.Button btn_start;
-        private System.Windows.Forms.Label lbl_debug;
         private System.Windows.Forms.Label lbl_winlose;
         private System.Windows.Forms.Label lbl_finalword;
         private System.Windows.Forms.TextBox txtbx_player;
