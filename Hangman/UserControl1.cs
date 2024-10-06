@@ -43,8 +43,6 @@ namespace Hangman
             lbl_playernames.Text = "Input player names: ";
             lbl_playernameslist.Text = "";
             lbl_nameserror.Text = "";
-
-            lbl_debug.Text = "";
         }
 
         public void SetLetterBtnVisible(bool visible)
@@ -63,7 +61,6 @@ namespace Hangman
 
             CurrentGame = new Game(CurrentWord, PlayerNames);
 
-            lbl_debug.Text = CurrentWord;
             lbl_guesses.Text = "No current guesses";
             lbl_hangman.Text = HangmanStates.GetState(0);
             lbl_progress.Text = CurrentGame.CurrentWord.Progress;
